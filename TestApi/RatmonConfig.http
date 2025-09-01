@@ -1,0 +1,43 @@
+@Ratmon_HostAddress = https://localhost:7119
+@Ratmon_AuthToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIiwianRpIjoiMWE5MDI4YzgtNjFhNy00NTk1LThjODQtMGU1MWJiMDJmNmNmIiwibmFtZWlkIjoiYWI2MDhkNDMtMGRjZi00ZDE0LWI5MjYtYjdmYzMwYWZjNTEwIiwicm9sZSI6IkFkbWluIiwiTG9nZ2VkT24iOiIwMS4wOS4yMDI1IDE5OjE3OjI3IiwibmJmIjoxNzU2NzQ3MDQ3LCJleHAiOjE3NTY3NTA2NDcsImlhdCI6MTc1Njc0NzA0NywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3QiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdCJ9.YI7ttp7JlqZe-bqCEilIpmM6SU3EXQr_-xaDcfmE6LY
+
+# GET {{Ratmon_HostAddress}}/mdata/
+# Accept: application/json
+
+### Mouse2_Config Update
+PUT {{Ratmon_HostAddress}}/settings/mouse2
+Content-Type: application/json
+
+{
+    "name":"mouse2 12",
+    "threshold": 50.57
+}
+
+### Mouse2B_Config Update
+PUT {{Ratmon_HostAddress}}/settings/mouse2b
+Content-Type: application/json
+
+{
+    "name":"mouse2b 34",
+    "threshold": 50.57,
+    "wireLength": 130
+}
+
+### Mouse2_Config Update
+PUT {{Ratmon_HostAddress}}/settings/mousecombo
+Content-Type: application/json
+
+{
+    "name":"mousecombo 56",
+    "threshold": 60.75
+}
+
+### Mouse2_Config Update
+PUT {{Ratmon_HostAddress}}/settings/mas2
+Content-Type: application/json
+
+{
+    "name":"mas2 78",
+    "temperaturethreshold": 10.15,
+    "humiditythreshold": 30.2
+}

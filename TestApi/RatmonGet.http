@@ -1,0 +1,45 @@
+@Ratmon_HostAddress = https://localhost:7119
+@Ratmon_AuthToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKb2huIiwianRpIjoiMWE5MDI4YzgtNjFhNy00NTk1LThjODQtMGU1MWJiMDJmNmNmIiwibmFtZWlkIjoiYWI2MDhkNDMtMGRjZi00ZDE0LWI5MjYtYjdmYzMwYWZjNTEwIiwicm9sZSI6IkFkbWluIiwiTG9nZ2VkT24iOiIwMS4wOS4yMDI1IDE5OjE3OjI3IiwibmJmIjoxNzU2NzQ3MDQ3LCJleHAiOjE3NTY3NTA2NDcsImlhdCI6MTc1Njc0NzA0NywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3QiLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdCJ9.YI7ttp7JlqZe-bqCEilIpmM6SU3EXQr_-xaDcfmE6LY
+
+# GET {{Ratmon_HostAddress}}/mdata/
+# Accept: application/json
+
+### Mouse2 Get1
+GET {{Ratmon_HostAddress}}/getdata/mouse2
+Content-Type: application/json
+# Authorization: Bearer {{Ratmon_AuthToken}}
+
+### Mouse2 Get2
+GET {{Ratmon_HostAddress}}/getdata/mouse2?count=1
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### Mouse2B Get1
+GET {{Ratmon_HostAddress}}/getdata/mouse2b
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### Mouse2B Get2
+GET {{Ratmon_HostAddress}}/getdata/mouse2b?count=1
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### MouseCombo Get1
+GET {{Ratmon_HostAddress}}/getdata/mousecombo
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### MouseCombo Get2
+GET {{Ratmon_HostAddress}}/getdata/mousecombo?count=1
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### Mas2 Get1
+GET {{Ratmon_HostAddress}}/getdata/mas2
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}
+
+### Mas2 Get2
+GET {{Ratmon_HostAddress}}/getdata/mas2?count=1
+Content-Type: application/json
+Authorization: Bearer {{Ratmon_AuthToken}}

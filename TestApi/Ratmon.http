@@ -1,0 +1,109 @@
+@Ratmon_HostAddress = https://localhost:7119
+
+### AuthUser
+POST {{Ratmon_HostAddress}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "Matthew",
+    "password": "Matthew_zaq1@WSX"
+}
+
+### AuthUser2
+POST {{Ratmon_HostAddress}}/auth/login
+Content-Type: application/json
+
+{
+    "username": "John",
+    "password": "John_zaq1@WSX"
+}
+
+### Mouse2 Insert
+POST {{Ratmon_HostAddress}}/mdata/mouse2
+Content-Type: application/x-www-form-urlencoded
+
+V=40,5&Ω=200,8
+
+### Mouse2B Correct Insert
+POST {{Ratmon_HostAddress}}/mdata/mouse2b
+Content-Type: application/x-www-form-urlencoded
+
+V=40,5&Ω=200,8&leaklocation=30
+
+### Mouse2B Incorrect Insert
+POST {{Ratmon_HostAddress}}/mdata/mouse2b
+Content-Type: application/x-www-form-urlencoded
+
+V=40,5&Ω=200,8&leaklocation=130
+
+### MouseCombo Correct Insert
+POST {{Ratmon_HostAddress}}/mdata/mousecombo
+Content-Type: application/json
+
+{
+    "V":40.5,
+    "Ω":200.8,
+    "Reflectograms": [
+        { "SeriesNumber": 0, "Bytes": "dGVzdDE=" },
+        { "SeriesNumber": 1, "Bytes": "dGVzdDI=" }
+    ]
+}
+
+### MouseCombo Incorrect Insert1
+POST {{Ratmon_HostAddress}}/mdata/mousecombo
+Content-Type: application/json
+
+{
+    "V":40.5,
+    "Ω":200.8,
+    "Reflectograms": [
+        { "SeriesNumber": 0, "Bytes": "dGVzdDE=" },
+        { "SeriesNumber": 20, "Bytes": "dGVzdDI=" }
+    ]
+}
+
+### MouseCombo Incorrect Insert2
+POST {{Ratmon_HostAddress}}/mdata/mousecombo
+Content-Type: application/json
+
+{
+    "V":40.5,
+    "Ω":200.8,
+    "Reflectograms": [
+        { "SeriesNumber": 5, "Bytes": "dGVzdDE=" },
+        { "SeriesNumber": 5, "Bytes": "dGVzdDI=" }
+    ]
+}
+
+### MouseCombo Incorrect Insert3
+POST {{Ratmon_HostAddress}}/mdata/mousecombo
+Content-Type: application/json
+
+{
+    "V":40.5,
+    "Ω":200.8,
+    "Reflectograms": [
+        { "SeriesNumber": 25, "Bytes": "dGVzdDE=" },
+        { "SeriesNumber": 25, "Bytes": "dGVzdDI=" }
+    ]
+}
+
+### Mas2 Correct Insert
+POST {{Ratmon_HostAddress}}/mdata/mas2
+Content-Type: application/json
+
+{
+    "C": 100,
+    "Humidity": 50
+}
+
+### Mas2 Incorrect Insert
+POST {{Ratmon_HostAddress}}/mdata/mas2
+Content-Type: application/json
+
+{
+    "C": 100,
+    "Humidity": 150
+}
+
+

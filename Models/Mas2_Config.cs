@@ -1,0 +1,18 @@
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+namespace Ratmon.Models;
+
+public class Mas2_Config
+{
+    [Key]
+    public int Id { get; set; }
+
+    [Required]
+    public required string Name { get; set; }
+
+    [DefaultValue(0)]
+    public float TemperatureThreshold { get; set; }
+
+    [DefaultValue(0)]
+    public float HumidityThreshold { get; set; }
+}
