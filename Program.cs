@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.DataProtection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authorization;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,9 +33,11 @@ if (builder.Environment.EnvironmentName == "Development")
 
 builder.Services.AddDbContext<RatmonDbContext>();
 
-builder.Services.AddAuthentication().AddJwtBearer(o =>
+var config = builder.Configuration.GetSection("Main").GetSection("JWT");
+var key = Encoding.ASCII.GetBytes(config.GetValue<string>("Secret") ?? "");
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(o =>
 {
-    var config = builder.Configuration.GetSection("Main").GetSection("JWT");
     o.Authority = config.GetValue<string>("Authority");
     o.Audience = config.GetValue<string>("Audience");
     o.TokenValidationParameters = new TokenValidationParameters
@@ -44,8 +47,15 @@ builder.Services.AddAuthentication().AddJwtBearer(o =>
         ValidateIssuerSigningKey = true,
         ValidAudience = config.GetValue<string>("ValidAudience"),
         ValidIssuer = config.GetValue<string>("ValidIssuer"),
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(config.GetValue<string>("Secret")?? ""))
+        IssuerSigningKey = new SymmetricSecurityKey(key)
     };
+    o.SaveToken = true;
+    if (o.Configuration is not null)
+    {
+        o.Configuration.AuthorizationEndpoint = "auth/login";
+    }
+    if (builder.Environment.EnvironmentName == "Development")
+        o.IncludeErrorDetails = true;
 });
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
@@ -57,8 +67,6 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
     options.Password.RequireLowercase = false;
     options.SignIn.RequireConfirmedEmail = false;
 }).AddEntityFrameworkStores<RatmonDbContext>().AddDefaultTokenProviders();
-
-builder.Services.AddAuthorization();
 
 var app = builder.Build();
 

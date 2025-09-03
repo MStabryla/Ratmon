@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ namespace Ratmon.Controllers
 {
     [Route("getdata")]
     [ApiController]
-    [Authorize(Roles = "Admin,User")]
+    [Authorize(Roles = "Admin,User",AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class GetDataController : ControllerBase
     {
         private RatmonDbContext Context { get; set; }

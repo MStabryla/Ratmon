@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,7 @@ namespace Ratmon.Controllers
 {
     [Route("settings")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class SetSettingsController : ControllerBase
     {
         private RatmonDbContext Context { get; set; }
@@ -17,6 +18,7 @@ namespace Ratmon.Controllers
         {
             Context = context;
         }
+
 
         [HttpPut]
         [Route("mouse2")]
