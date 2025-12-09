@@ -10,7 +10,7 @@ Projekt został zrealizowany w technologii **.NET 9.0** z wykorzystaniem **Entit
 
 # Opis
 
-:white_check_mark: >Zakończony
+:white_check_mark: Zakończony
 
 Projekt został zakończony w ciągu 2 dni we wrześniu 2025 roku.
 
