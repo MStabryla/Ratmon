@@ -10,7 +10,7 @@ Projekt został zrealizowany w technologii **.NET 9.0** z wykorzystaniem **Entit
 
 # Opis
 
-### <span style='color: green;'>Zakończony</span>
+:white_check_mark: >Zakończony
 
 Projekt został zakończony w ciągu 2 dni we wrześniu 2025 roku.
 
@@ -25,6 +25,6 @@ The project was implemented in **.NET 9.0** technology using **Entity Framework 
 
 # Description
 
-### <span style='color: green;'>Completed</span>
+:white_check_mark: Completed
 
 The project was completed within 2 days in September 2025.
