@@ -1,4 +1,4 @@
-![main image](https://github.com/MStabryla/Ratmon/blob/main/main.png?raw=true)
+![main image](https://github.com/MStabryla/Ratmon/blob/master/main.png?raw=true)
 # PL - Zadanie Rekrutacyjne - REST API
 
 Zadanie rekrutacyjne do stworzenia REST API obsługującego założenia prostego wprowadzania i odbioru danych.
