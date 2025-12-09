@@ -14,7 +14,7 @@ Projekt został zrealizowany w technologii **.NET 9.0** z wykorzystaniem **Entit
 
 Projekt został zakończony w ciągu 2 dni we wrześniu 2025 roku.
 
-# PL - Recruitment Task - REST API
+# EN - Recruitment Task - REST API
 
 Recruitment task to create a REST API supporting simple data entry and retrieval.
 The program includes endpoints responsible for authorization, inserting data into the database, and reading with and without authorization.
